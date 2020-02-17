@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Homepage} from './homepage'
+import {Homepage} from './pages/homepage'
 function App() {
   return (
     <div >
@@ -10,3 +10,4 @@ function App() {
 }
 
 export default App;
+
