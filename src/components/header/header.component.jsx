@@ -1,20 +1,24 @@
 import React from 'react';
-import './collection-preview.styles.scss';
+import { Link } from 'react-router-dom';
 
-const CollectionItem = ({ id, name, price, imageUrl }) => (
-	<div className='collection-item'>
+import { ReactComponent as Logo } from '../../assets/crown.svg';
 
-		<div className='image'
-			styke={{
-				backgroundImage: `url(${imageUrl})`
-			}}>
-			<div className='collection-footer'>
-				<span className='name'>{name}</span>
-				<span className='price'>{price}</span>
-			</div>
+import './header.styles.scss';
 
-		</div>
-	</div>
+const Header = () => (
+  <div className='header'>
+    <Link className='logo-container' to='/'>
+      <Logo className='logo' />
+    </Link>
+    <div className='options'>
+      <Link className='option' to='/shop'>
+        SHOP
+      </Link>
+      <Link className='option' to='/shop'>
+        CONTACT
+      </Link>
+    </div>
+  </div>
 );
 
-export default CollectionItem;
+export default Header;
