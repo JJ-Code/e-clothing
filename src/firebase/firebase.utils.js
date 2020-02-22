@@ -19,7 +19,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   //if this user return auth obj is not null  (aka not login) then query the users collection in the firebase database
   if (!userAuth) return;
+
   const userRef = firestore.doc(`users/${userAuth.uid}`);
+
   const snapShot = await userRef.get();
 
   if (!snapShot.exists) {
@@ -41,12 +43,11 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   }
 
   return userRef;
-};
+  };
+
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-
-//Google sign up pop up
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({

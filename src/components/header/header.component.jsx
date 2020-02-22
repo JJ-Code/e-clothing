@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux'
-import { auth } from '../../firebase/firebase.utils';
+import { connect } from 'react-redux';
+
+import { auth } from '../../firebase/firebase.utils.js';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
@@ -32,9 +33,8 @@ const Header = ({ currentUser }) => (
   </div>
 );
 
-//grabs currentUser from redux store root.currentUser.state which is pass into the header as "currentUser"
-const mapStateToProps = state =>({
+const mapStateToProps = state => ({
   currentUser: state.user.currentUser
-})
+});
 
 export default connect(mapStateToProps)(Header);
