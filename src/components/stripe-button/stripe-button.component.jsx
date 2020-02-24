@@ -6,6 +6,7 @@ const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_mZYwlK6BlJztR8Q50JJyGUuI00OPpABqhh';
 
+
   const onToken = token => {
     console.log(token);
     alert('Payment Succesful!');
@@ -14,7 +15,7 @@ const StripeCheckoutButton = ({ price }) => {
   return (
     <StripeCheckout
       label='Pay Now'
-      name='JJ Styles Ltd.'
+      name='CRWN Clothing Ltd.'
       billingAddress
       shippingAddress
       image='https://svgshare.com/i/CUz.svg'
